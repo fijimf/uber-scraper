@@ -14,13 +14,12 @@ import reactor.core.publisher.Mono;
 import java.io.IOException;
 
 @Component
-public class PageLoader {
-    public static final Logger logger = LoggerFactory.getLogger(PageLoader.class);
+public class CachedPageLoader {
+    public static final Logger logger = LoggerFactory.getLogger(CachedPageLoader.class);
     @Autowired
     private ChromeDriver chromeDriver;
 
     public Mono<Document> loadPageWithSelenium(String url) {
-        logger.info(url);
         chromeDriver.get(url);
         return Mono.just(Jsoup.parse(chromeDriver.getPageSource()));
     }
@@ -42,7 +41,6 @@ public class PageLoader {
     }
 
     public Mono<Document> loadPage(String url) {
-        logger.info(url);
         Connection connection = Jsoup.connect(url)
                 .userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36")
                 .referrer("www.google.com");
