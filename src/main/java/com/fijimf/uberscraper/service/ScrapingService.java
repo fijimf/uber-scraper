@@ -1,5 +1,7 @@
 package com.fijimf.uberscraper.service;
 
+import com.fijimf.uberscraper.service.espn.ConferenceScraper;
+import com.fijimf.uberscraper.service.espn.ScoreboardScraper;
 import com.fijimf.uberscraper.service.espn.Utils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,13 +37,13 @@ public class ScrapingService {
     }
     @GetMapping("/confMap")
     public Map<String, String> confMap(@RequestParam("season") int season)  {
-        return pageLoader.loadPageWithSelenium(Utils.allConferenceStandingsUrl(season)).map(Utils::extractTeamConferenceMapping).block();
+        return pageLoader.loadPageWithSelenium(ConferenceScraper.allConferenceStandingsUrl(season)).map(ConferenceScraper::extractTeamConferenceMapping).block();
     }
 
     @GetMapping("/gameIds")
     public Mono<List<String>> gameIds(@RequestParam("yyyymmdd") String yyyymmdd)  {
-        String url = Utils.scoreboardUrl(Utils.yyyymmdd(yyyymmdd));
-        return pageLoader.loadPageWithSelenium(url).map(Utils::extractGameIdsFromScoreboard);
+        String url = ScoreboardScraper.scoreboardUrl(Utils.yyyymmdd(yyyymmdd));
+        return pageLoader.loadPageWithSelenium(url).map(ScoreboardScraper::extractGameIdsFromScoreboard);
     }
 
 
