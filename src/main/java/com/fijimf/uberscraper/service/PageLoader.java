@@ -1,5 +1,6 @@
 package com.fijimf.uberscraper.service;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -8,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StopWatch;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -20,9 +22,16 @@ public class PageLoader {
     private ChromeDriver chromeDriver;
 
     public Mono<Document> loadPageWithSelenium(String url) {
-        logger.info(url);
-        chromeDriver.get(url);
-        return Mono.just(Jsoup.parse(chromeDriver.getPageSource()));
+        String urlKey = DigestUtils.md5Hex(url);
+        logger.info(urlKey + "-" + url);
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start("GET " + url);
+       // chromeDriver.get(url);
+        chromeDriver.navigate().to(url);
+        String pageSource = chromeDriver.getPageSource();
+        stopWatch.stop();
+        logger.info(pageSource.length() + " bytes received in " + stopWatch.getTotalTimeSeconds() + " seconds");
+        return Mono.just(Jsoup.parse(pageSource));
     }
 
     public Mono<Document> loadPageWithSelenium(Mono<String> url) {

@@ -105,12 +105,12 @@ public class GameScraperTest {
     void gameDetailTime() throws IOException {
         try (InputStream inputStream = ClassLoader.getSystemResourceAsStream("pages/gameDetail-1.html")) {
             Document document = Jsoup.parse(inputStream, Charset.defaultCharset().name(), GameScraper.gameUrl(1234567));
-            LocalDateTime time = GameScraper.time(document);
+            LocalDateTime time = GameScraper.time(document).get();
             assertThat(time).isEqualTo(LocalDateTime.of(2021,11,29,18,30));
         }
         try (InputStream inputStream = ClassLoader.getSystemResourceAsStream("pages/gameDetail-2.html")) {
             Document document = Jsoup.parse(inputStream, Charset.defaultCharset().name(), GameScraper.gameUrl(1234567));
-            LocalDateTime time = GameScraper.time(document);
+            LocalDateTime time = GameScraper.time(document).get();
             assertThat(time).isEqualTo(LocalDateTime.of(2021,11,24,20,0));
         }
     }
@@ -119,14 +119,14 @@ public class GameScraperTest {
     void gameDetailDate() throws IOException {
         try (InputStream inputStream = ClassLoader.getSystemResourceAsStream("pages/gameDetail-1.html")) {
             Document document = Jsoup.parse(inputStream, Charset.defaultCharset().name(), GameScraper.gameUrl(1234567));
-            LocalDate date = GameScraper.date(document);
+            LocalDate date = GameScraper.date(document).get();
             assertThat(date).isEqualTo(LocalDate.of(2021,11,29));
 
 
         }
         try (InputStream inputStream = ClassLoader.getSystemResourceAsStream("pages/gameDetail-2.html")) {
             Document document = Jsoup.parse(inputStream, Charset.defaultCharset().name(), GameScraper.gameUrl(1234567));
-            LocalDate date =  GameScraper.date(document);
+            LocalDate date =  GameScraper.date(document).get();
             assertThat(date).isEqualTo(LocalDate.of(2021,11,24));
         }
     }

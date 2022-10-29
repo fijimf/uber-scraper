@@ -1,0 +1,8 @@
+
+https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard
+https://site.web.api.espn.com/apis/v2/colleges/2509
+
+ODDS
+https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=mens-college-basketball&dates=20210403
+NEUTRAL
+https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20210403&group=50

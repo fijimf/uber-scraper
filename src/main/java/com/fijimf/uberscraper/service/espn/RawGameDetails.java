@@ -5,42 +5,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class RawGameDetails {
-    /*
-        header.game-package div.game-details
-
-        header.game-package div.competitors div.away span.rank
-        header.game-package div.competitors div.away a.team-name
-        header.game-package div.competitors div.away a.team-name span.long-name
-        header.game-package div.competitors div.away a.team-name span.short-name
-        header.game-package div.competitors div.away a.team-name span.abbrev
-        header.game-package div.competitors div.away div.score
-        
-        header.game-package div.competitors div.home span.rank
-        header.game-package div.competitors div.home a.team-name
-        header.game-package div.competitors div.home a.team-name span.long-name
-        header.game-package div.competitors div.home a.team-name span.short-name
-        header.game-package div.competitors div.home a.team-name span.abbrev
-        header.game-package div.competitors div.home div.score
-        
-        header.game-package div.game-status span.status-detail
-        
-        header.game-package div.game-status table#linescore thead th
-        header.game-package div.game-status table#linescore tbody td
-        
-        div#gamepackage-game-information div.game-location
-        div#gamepackage-game-information span.game-time
-        
-        div#gamepackage-game-information span.game-date
-        
-        div#gamepackage-game-information div.odds li
-     */
-
-
-    /*
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy h:mm a");
-            System.err.println( LocalDateTime.parse("November 29, 2021 8:00 PM", formatter));
-
-     */
     private String gameDetails;
     private String homeRank;
     private String homeName;

@@ -1,0 +1,703 @@
+{
+  "sports": [
+    {
+      "id": "40",
+      "uid": "s:40",
+      "name": "Basketball",
+      "slug": "basketball",
+      "leagues": [
+        {
+          "id": "41",
+          "uid": "s:40~l:41",
+          "name": "NCAA Men's Basketball",
+          "abbreviation": "NCAAM",
+          "shortName": "NCAAM",
+          "slug": "mens-college-basketball",
+          "isTournament": false,
+          "events": [
+            {
+              "gamecastAvailable": true,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": false,
+              "recent": false,
+              "id": "401258956",
+              "competitionId": "401258956",
+              "uid": "s:40~l:41~e:401258956~c:401258956",
+              "date": "2021-02-05T19:00:00Z",
+              "timeValid": true,
+              "name": "North Dakota Fighting Hawks at Denver Pioneers",
+              "shortName": "UND @ DEN",
+              "location": "Hamilton Gymnasium",
+              "season": 2021,
+              "seasonStartDate": "2020-07-01T07:00:00Z",
+              "seasonEndDate": "2021-03-15T06:59:00Z",
+              "seasonType": "2",
+              "seasonTypeHasGroups": false,
+              "group": {
+                "groupId": "2",
+                "name": "Regular Season",
+                "abbreviation": "reg",
+                "shortName": "REG"
+              },
+              "week": 11,
+              "weekText": "Week 11",
+              "period": 3,
+              "clock": "0:00",
+              "status": "post",
+              "summary": "Final/OT",
+              "fullStatus": {
+                "clock": 0.0,
+                "displayClock": "0:00",
+                "period": 3,
+                "type": {
+                  "id": "3",
+                  "name": "STATUS_FINAL",
+                  "state": "post",
+                  "completed": true,
+                  "description": "Final",
+                  "detail": "Final/OT",
+                  "shortDetail": "Final/OT",
+                  "altDetail": "OT"
+                }
+              },
+              "link": "http://www.espn.com/mens-college-basketball/game/_/gameId/401258956",
+              "links": [
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "http://www.espn.com/mens-college-basketball/game/_/gameId/401258956",
+                  "text": "Gamecast",
+                  "isExternal": false,
+                  "isPremium": false
+                },
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "boxscore",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "http://www.espn.com/mens-college-basketball/boxscore/_/gameId/401258956",
+                  "text": "Box Score",
+                  "isExternal": false,
+                  "isPremium": false
+                }
+              ],
+              "onWatch": false,
+              "odds": {
+                "provider": {
+                  "id": "45",
+                  "name": "Caesars Sportsbook (New Jersey)",
+                  "priority": 1
+                },
+                "details": "UND -3.5",
+                "overUnder": 140.5,
+                "spread": 3.5,
+                "overOdds": -110.0,
+                "underOdds": -110.0,
+                "awayTeamOdds": {
+                  "favorite": true,
+                  "underdog": false,
+                  "moneyLine": -170,
+                  "spreadOdds": -110.0,
+                  "team": {
+                    "id": "155",
+                    "abbreviation": "UND"
+                  }
+                },
+                "homeTeamOdds": {
+                  "favorite": false,
+                  "underdog": true,
+                  "moneyLine": 145,
+                  "spreadOdds": -110.0,
+                  "team": {
+                    "id": "2172",
+                    "abbreviation": "DEN"
+                  }
+                },
+                "links": [
+
+                ],
+                "moneylineWinner": false,
+                "spreadWinner": false,
+                "home": {
+                  "moneyLine": 145
+                },
+                "away": {
+                  "moneyLine": -170
+                }
+              },
+              "competitors": [
+                {
+                  "id": "2172",
+                  "uid": "s:40~l:41~t:2172",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": false,
+                  "score": "82",
+                  "record": "1-13",
+                  "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2172.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2172.png",
+                  "displayName": "Denver Pioneers",
+                  "name": "Denver",
+                  "abbreviation": "DEN",
+                  "location": "Denver",
+                  "color": "9c143d",
+                  "alternateColor": "d6ba74",
+                  "group": "49",
+                  "competitionIdPrevious": "401258953",
+                  "competitionIdNext": "401258960"
+                },
+                {
+                  "id": "155",
+                  "uid": "s:40~l:41~t:155",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": true,
+                  "score": "85",
+                  "record": "6-14",
+                  "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/155.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/155.png",
+                  "displayName": "North Dakota Fighting Hawks",
+                  "name": "North Dakota",
+                  "abbreviation": "UND",
+                  "location": "North Dakota",
+                  "color": "00A26B",
+                  "alternateColor": "c2c3c0",
+                  "group": "49",
+                  "competitionIdPrevious": "401258954",
+                  "competitionIdNext": "401258960"
+                }
+              ],
+              "appLinks": [
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "summary",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401258956",
+                  "text": "Gamecast",
+                  "shortText": "Summary",
+                  "isExternal": false,
+                  "isPremium": false
+                },
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "boxscore",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401258956",
+                  "text": "Box Score",
+                  "shortText": "Box Score",
+                  "isExternal": false,
+                  "isPremium": false
+                },
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "gamecast",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401258956",
+                  "text": "Gamecast",
+                  "shortText": "Gamecast",
+                  "isExternal": false,
+                  "isPremium": false
+                }
+              ]
+            },
+            {
+              "gamecastAvailable": true,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": false,
+              "recent": false,
+              "id": "401283712",
+              "competitionId": "401283712",
+              "uid": "s:40~l:41~e:401283712~c:401283712",
+              "date": "2021-02-05T20:00:00Z",
+              "timeValid": true,
+              "name": "UMass Lowell River Hawks at New Hampshire Wildcats",
+              "shortName": "UML @ UNH",
+              "location": "Lundholm Gymnasium",
+              "season": 2021,
+              "seasonStartDate": "2020-07-01T07:00:00Z",
+              "seasonEndDate": "2021-03-15T06:59:00Z",
+              "seasonType": "2",
+              "seasonTypeHasGroups": false,
+              "group": {
+                "groupId": "2",
+                "name": "Regular Season",
+                "abbreviation": "reg",
+                "shortName": "REG"
+              },
+              "week": 11,
+              "weekText": "Week 11",
+              "period": 2,
+              "clock": "0:00",
+              "status": "post",
+              "summary": "Final",
+              "fullStatus": {
+                "clock": 0.0,
+                "displayClock": "0:00",
+                "period": 2,
+                "type": {
+                  "id": "3",
+                  "name": "STATUS_FINAL",
+                  "state": "post",
+                  "completed": true,
+                  "description": "Final",
+                  "detail": "Final",
+                  "shortDetail": "Final"
+                }
+              },
+              "link": "http://www.espn.com/mens-college-basketball/game/_/gameId/401283712",
+              "links": [
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "http://www.espn.com/mens-college-basketball/game/_/gameId/401283712",
+                  "text": "Gamecast",
+                  "isExternal": false,
+                  "isPremium": false
+                },
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "boxscore",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "http://www.espn.com/mens-college-basketball/boxscore/_/gameId/401283712",
+                  "text": "Box Score",
+                  "isExternal": false,
+                  "isPremium": false
+                }
+              ],
+              "onWatch": true,
+              "broadcasts": [
+                {
+                  "type": "Web",
+                  "station": "ESPN3",
+                  "slug": "espn3",
+                  "priority": 0,
+                  "lang": "en",
+                  "region": "us",
+                  "typeId": 4,
+                  "isNational": true,
+                  "broadcasterId": 122,
+                  "broadcastId": 122,
+                  "name": "ESPN3",
+                  "shortName": "ESPN3",
+                  "callLetters": "ESPN3"
+                }
+              ],
+              "broadcast": "ESPN3",
+              "odds": {
+                "provider": {
+                  "id": "45",
+                  "name": "Caesars Sportsbook (New Jersey)",
+                  "priority": 1
+                },
+                "details": "UNH -3.5",
+                "overUnder": 137.5,
+                "spread": -3.5,
+                "overOdds": -110.0,
+                "underOdds": -110.0,
+                "awayTeamOdds": {
+                  "favorite": false,
+                  "underdog": true,
+                  "moneyLine": 145,
+                  "spreadOdds": -105.0,
+                  "team": {
+                    "id": "2349",
+                    "abbreviation": "UML"
+                  }
+                },
+                "homeTeamOdds": {
+                  "favorite": true,
+                  "underdog": false,
+                  "moneyLine": -170,
+                  "spreadOdds": -115.0,
+                  "team": {
+                    "id": "160",
+                    "abbreviation": "UNH"
+                  }
+                },
+                "links": [
+
+                ],
+                "moneylineWinner": false,
+                "spreadWinner": false,
+                "home": {
+                  "moneyLine": -170
+                },
+                "away": {
+                  "moneyLine": 145
+                }
+              },
+              "competitors": [
+                {
+                  "id": "160",
+                  "uid": "s:40~l:41~t:160",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": false,
+                  "score": "69",
+                  "record": "8-8",
+                  "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/160.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/160.png",
+                  "displayName": "New Hampshire Wildcats",
+                  "name": "New Hampshire",
+                  "abbreviation": "UNH",
+                  "location": "New Hampshire",
+                  "color": "004990",
+                  "alternateColor": "c3c4c6",
+                  "group": "1",
+                  "competitionIdPrevious": "401281400",
+                  "competitionIdNext": "401283713"
+                },
+                {
+                  "id": "2349",
+                  "uid": "s:40~l:41~t:2349",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": true,
+                  "score": "74",
+                  "record": "7-8",
+                  "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2349.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2349.png",
+                  "displayName": "UMass Lowell River Hawks",
+                  "name": "UMass Lowell",
+                  "abbreviation": "UML",
+                  "location": "UMass Lowell",
+                  "color": "00529C",
+                  "alternateColor": "cf1f2f",
+                  "group": "1",
+                  "competitionIdPrevious": "401281399",
+                  "competitionIdNext": "401283713"
+                }
+              ],
+              "appLinks": [
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "summary",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401283712",
+                  "text": "Gamecast",
+                  "shortText": "Summary",
+                  "isExternal": false,
+                  "isPremium": false
+                },
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "boxscore",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401283712",
+                  "text": "Box Score",
+                  "shortText": "Box Score",
+                  "isExternal": false,
+                  "isPremium": false
+                },
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "gamecast",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401283712",
+                  "text": "Gamecast",
+                  "shortText": "Gamecast",
+                  "isExternal": false,
+                  "isPremium": false
+                },
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "watchespn",
+                    "app",
+                    "event"
+                  ],
+                  "href": "watchespn://showEvent?gameId=401283712&sourceLang=en",
+                  "text": "WatchESPN",
+                  "shortText": "WatchESPN",
+                  "isExternal": false,
+                  "isPremium": false
+                }
+              ]
+            },
+            {
+              "gamecastAvailable": true,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": false,
+              "recent": false,
+              "id": "401254694",
+              "competitionId": "401254694",
+              "uid": "s:40~l:41~e:401254694~c:401254694",
+              "date": "2021-02-05T20:00:00Z",
+              "timeValid": true,
+              "name": "Southern Miss Golden Eagles at Rice Owls",
+              "shortName": "USM @ RICE",
+              "location": "Tudor Fieldhouse",
+              "season": 2021,
+              "seasonStartDate": "2020-07-01T07:00:00Z",
+              "seasonEndDate": "2021-03-15T06:59:00Z",
+              "seasonType": "2",
+              "seasonTypeHasGroups": false,
+              "group": {
+                "groupId": "2",
+                "name": "Regular Season",
+                "abbreviation": "reg",
+                "shortName": "REG"
+              },
+              "week": 11,
+              "weekText": "Week 11",
+              "period": 2,
+              "clock": "0:00",
+              "status": "post",
+              "summary": "Final",
+              "fullStatus": {
+                "clock": 0.0,
+                "displayClock": "0:00",
+                "period": 2,
+                "type": {
+                  "id": "3",
+                  "name": "STATUS_FINAL",
+                  "state": "post",
+                  "completed": true,
+                  "description": "Final",
+                  "detail": "Final",
+                  "shortDetail": "Final"
+                }
+              },
+              "link": "http://www.espn.com/mens-college-basketball/game/_/gameId/401254694",
+              "links": [
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "http://www.espn.com/mens-college-basketball/game/_/gameId/401254694",
+                  "text": "Gamecast",
+                  "isExternal": false,
+                  "isPremium": false
+                },
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "boxscore",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "http://www.espn.com/mens-college-basketball/boxscore/_/gameId/401254694",
+                  "text": "Box Score",
+                  "isExternal": false,
+                  "isPremium": false
+                }
+              ],
+              "onWatch": true,
+              "broadcasts": [
+                {
+                  "type": "Web",
+                  "station": "ESPN+",
+                  "slug": "espn",
+                  "priority": 0,
+                  "lang": "en",
+                  "region": "us",
+                  "typeId": 4,
+                  "isNational": true,
+                  "broadcasterId": 755,
+                  "broadcastId": 755,
+                  "name": "ESPN+",
+                  "shortName": "ESPN+",
+                  "callLetters": "ESPN+"
+                }
+              ],
+              "broadcast": "ESPN+",
+              "odds": {
+                "provider": {
+                  "id": "45",
+                  "name": "Caesars Sportsbook (New Jersey)",
+                  "priority": 1
+                },
+                "details": "RICE -3.5",
+                "overUnder": 139.0,
+                "spread": -3.5,
+                "overOdds": -110.0,
+                "underOdds": -110.0,
+                "awayTeamOdds": {
+                  "favorite": false,
+                  "underdog": true,
+                  "moneyLine": 155,
+                  "spreadOdds": -110.0,
+                  "team": {
+                    "id": "2572",
+                    "abbreviation": "USM"
+                  }
+                },
+                "homeTeamOdds": {
+                  "favorite": true,
+                  "underdog": false,
+                  "moneyLine": -180,
+                  "spreadOdds": -110.0,
+                  "team": {
+                    "id": "242",
+                    "abbreviation": "RICE"
+                  }
+                },
+                "links": [
+
+                ],
+                "moneylineWinner": false,
+                "spreadWinner": false,
+                "home": {
+                  "moneyLine": -180
+                },
+                "away": {
+                  "moneyLine": 155
+                }
+              },
+              "competitors": [
+                {
+                  "id": "242",
+                  "uid": "s:40~l:41~t:242",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": true,
+                  "score": "88",
+                  "record": "11-8",
+                  "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/242.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/242.png",
+                  "displayName": "Rice Owls",
+                  "name": "Rice",
+                  "abbreviation": "RICE",
+                  "location": "Rice",
+                  "color": "003D7D",
+                  "alternateColor": "d1d5d8",
+                  "group": "65",
+                  "competitionIdPrevious": "401282547",
+                  "competitionIdNext": "401254695"
+                },
+                {
+                  "id": "2572",
+                  "uid": "s:40~l:41~t:2572",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": false,
+                  "score": "62",
+                  "record": "7-11",
+                  "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2572.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2572.png",
+                  "displayName": "Southern Miss Golden Eagles",
+                  "name": "Southern Miss",
+                  "abbreviation": "USM",
+                  "location": "Southern Miss",
+                  "color": "FFAA3C",
+                  "alternateColor": "ffc423",
+                  "group": "65",
+                  "competitionIdPrevious": "401281615",
+                  "competitionIdNext": "401254695"
+                }
+              ],
+              "appLinks": [
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "summary",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401254694",
+                  "text": "Gamecast",
+                  "shortText": "Summary",
+                  "isExternal": false,
+                  "isPremium": false
+                },
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "boxscore",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401254694",
+                  "text": "Box Score",
+                  "shortText": "Box Score",
+                  "isExternal": false,
+                  "isPremium": false
+                },
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "gamecast",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401254694",
+                  "text": "Gamecast",
+                  "shortText": "Gamecast",
+                  "isExternal": false,
+                  "isPremium": false
+                },
+                {
+                  "language": "en-US",
+                  "rel": [
+                    "watchespn",
+                    "app",
+                    "event"
+                  ],
+                  "href": "watchespn://showEvent?gameId=401254694&sourceLang=en",
+                  "text": "WatchESPN",
+                  "shortText": "WatchESPN",
+                  "isExternal": false,
+                  "isPremium": false
+                }
+              ]
+            }
+          ],
+          "smartdates": [
+            "2021-02-05T08:00Z",
+            "2021-02-06T08:00Z",
+            "2021-02-07T08:00Z"
+          ]
+        }
+      ]
+    }
+  ]
+}
