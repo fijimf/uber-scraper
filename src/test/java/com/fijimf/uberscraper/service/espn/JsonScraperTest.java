@@ -30,6 +30,7 @@ public class JsonScraperTest {
             ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
             Scoreboard scoreboard = objectMapper.readValue(inputStream, Scoreboard.class);
             assertThat(scoreboard.getSports()).isNotNull();
+            System.err.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(scoreboard));
         }
     }
 }
