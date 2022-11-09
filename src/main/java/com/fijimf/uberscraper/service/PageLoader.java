@@ -4,7 +4,6 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,31 +19,10 @@ import java.io.IOException;
 @Component
 public class PageLoader {
     public static final Logger logger = LoggerFactory.getLogger(PageLoader.class);
-    @Autowired
-    private ChromeDriver chromeDriver;
 
     private RestTemplate restTemplate = new RestTemplate();
 
-    public Mono<Document> loadPageWithSelenium(String url) {
-        String urlKey = DigestUtils.md5Hex(url);
-        logger.info(urlKey + "-" + url);
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start("GET " + url);
-       // chromeDriver.get(url);
-        chromeDriver.navigate().to(url);
-        String pageSource = chromeDriver.getPageSource();
-        stopWatch.stop();
-        logger.info(pageSource.length() + " bytes received in " + stopWatch.getTotalTimeSeconds() + " seconds");
-        return Mono.just(Jsoup.parse(pageSource));
-    }
 
-    public Mono<Document> loadPageWithSelenium(Mono<String> url) {
-        return url.flatMap(this::loadPageWithSelenium);
-    }
-
-    public Flux<Document> loadPagesWithSelenium(Flux<String> urls) {
-        return urls.concatMap(this::loadPageWithSelenium);
-    }
 
     public Flux<Document> loadPages(Flux<String> urls) {
         return urls.flatMap(this::loadPage);

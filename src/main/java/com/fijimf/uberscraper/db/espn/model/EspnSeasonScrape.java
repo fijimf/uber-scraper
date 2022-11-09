@@ -12,7 +12,9 @@ public class EspnSeasonScrape {
     @Id
     private long id;
     private int season;
+    @Column("from_date")
     private LocalDate from;
+    @Column("to_date")
     private LocalDate to;
 
     @Column("started_at")
@@ -111,5 +113,15 @@ public class EspnSeasonScrape {
 
     public EspnSeasonScrape timeout() {
         return complete("TIMEOUT");
+    }
+
+    public LocalDate fromDate() {
+        LocalDate d = LocalDate.of(season - 1, 11, 1);
+        return ((from == null) || from.isBefore(d)) ? d : from;
+    }
+
+    public LocalDate toDate() {
+        LocalDate d = LocalDate.of(season, 4, 30);
+        return ((to == null) || to.isAfter(d)) ? d : to;
     }
 }
