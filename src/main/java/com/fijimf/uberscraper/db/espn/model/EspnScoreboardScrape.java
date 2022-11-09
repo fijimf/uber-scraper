@@ -16,6 +16,8 @@ public class EspnScoreboardScrape {
     private long espnSeasonScrapeId;
     @Column( "scoreboard_key")
     private LocalDate scoreboardKey;
+
+    private String flavor;
     private String url;
 
     @Column( "retrieved_at")
@@ -27,34 +29,36 @@ public class EspnScoreboardScrape {
     private Integer responseCode;
 
     private String response;
-    @Column("number_of_game_ids")
-    private Integer numberOfGameIds;
+    @Column("number_of_games")
+    private Integer numberOfGames;
 
     public EspnScoreboardScrape() {
     }
 
-    public EspnScoreboardScrape(long id, long espnSeasonScrapeId, LocalDate scoreboardKey, String url, LocalDateTime retrievedAt, Long responseTimeMs, Integer responseCode, String response, Integer numberOfGameIds) {
+    public EspnScoreboardScrape(long id, long espnSeasonScrapeId, LocalDate scoreboardKey, String flavor, String url, LocalDateTime retrievedAt, Long responseTimeMs, Integer responseCode, String response, Integer numberOfGames) {
         this.id = id;
         this.espnSeasonScrapeId = espnSeasonScrapeId;
         this.scoreboardKey = scoreboardKey;
+        this.flavor = flavor;
         this.url = url;
         this.retrievedAt = retrievedAt;
         this.responseTimeMs = responseTimeMs;
         this.responseCode = responseCode;
         this.response = response;
-        this.numberOfGameIds = numberOfGameIds;
+        this.numberOfGames = numberOfGames;
     }
 
-    public EspnScoreboardScrape(long espnSeasonScrapeId, LocalDate scoreboardKey, String url) {
+    public EspnScoreboardScrape(long espnSeasonScrapeId, LocalDate scoreboardKey, String flavor, String url) {
         this.id = 0L;
         this.espnSeasonScrapeId = espnSeasonScrapeId;
         this.scoreboardKey = scoreboardKey;
+        this.flavor = flavor;
         this.url = url;
         this.retrievedAt = null;
         this.responseTimeMs = null;
         this.responseCode = null;
         this.response = null;
-        this.numberOfGameIds = null;
+        this.numberOfGames = null;
     }
 
     public long getId() {
@@ -79,6 +83,14 @@ public class EspnScoreboardScrape {
 
     public void setScoreboardKey(LocalDate scoreboardKey) {
         this.scoreboardKey = scoreboardKey;
+    }
+
+    public String getFlavor() {
+        return flavor;
+    }
+
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
     }
 
     public String getUrl() {
@@ -121,11 +133,11 @@ public class EspnScoreboardScrape {
         this.response = response;
     }
 
-    public Integer getNumberOfGameIds() {
-        return numberOfGameIds;
+    public Integer getNumberOfGames() {
+        return numberOfGames;
     }
 
-    public void setNumberOfGameIds(Integer numberOfGameIds) {
-        this.numberOfGameIds = numberOfGameIds;
+    public void setNumberOfGames(Integer numberOfGameIds) {
+        this.numberOfGames = numberOfGameIds;
     }
 }

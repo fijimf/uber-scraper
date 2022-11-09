@@ -42,4 +42,13 @@ public class ScoreboardSport {
     public List<ScoreboardLeague> getLeagues() {
         return leagues;
     }
+
+    public long numberOfGames() {
+        if (leagues == null || leagues.isEmpty()) {
+            return 0;
+        } else {
+            List<ScoreboardGame> events = leagues.get(0).getEvents();
+            return events == null ? 0 : events.size();
+        }
+    }
 }

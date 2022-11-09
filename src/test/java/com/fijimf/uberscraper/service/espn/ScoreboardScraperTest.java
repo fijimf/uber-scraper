@@ -1,5 +1,8 @@
 package com.fijimf.uberscraper.service.espn;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fijimf.uberscraper.model.espn.Scoreboard;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Test;
@@ -31,4 +34,14 @@ public class ScoreboardScraperTest {
         }
     }
 
+    @Test
+    void numberOfGames() throws IOException {
+
+        try (InputStream inputStream = ClassLoader.getSystemResourceAsStream("pages/scoreboard.json")) {
+            ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
+            Scoreboard scoreboard = objectMapper.readValue(inputStream, Scoreboard.class);
+            assertThat(scoreboard.numberOfGames()).isEqualTo(3L);
+        }
+
+    }
 }

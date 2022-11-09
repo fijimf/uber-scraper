@@ -19,18 +19,6 @@ public class CachedPageLoader {
     @Autowired
     private ChromeDriver chromeDriver;
 
-    public Mono<Document> loadPageWithSelenium(String url) {
-        chromeDriver.get(url);
-        return Mono.just(Jsoup.parse(chromeDriver.getPageSource()));
-    }
-
-    public Mono<Document> loadPageWithSelenium(Mono<String> url) {
-        return url.flatMap(this::loadPageWithSelenium);
-    }
-
-    public Flux<Document> loadPagesWithSelenium(Flux<String> urls) {
-        return urls.concatMap(this::loadPageWithSelenium);
-    }
 
     public Flux<Document> loadPages(Flux<String> urls) {
         return urls.flatMap(this::loadPage);

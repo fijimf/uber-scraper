@@ -25,9 +25,10 @@ public class Utils {
     }
 
     public static Flux<LocalDate> generateSeasonDates(int year) {
-        return Flux.generate(() -> LocalDate.of(year, 11, 1),
+        return Flux.generate(() -> LocalDate.of(year, 11, 7),
                 (state, sink) -> {
-                    if (state.isAfter(LocalDate.of(year + 1, 4, 30))) {
+//                    if (state.isAfter(LocalDate.of(year + 1, 4, 30))) {
+                    if (state.isAfter(LocalDate.of(year , 11, 11))) {
                         sink.complete();
                     } else {
                         sink.next(state);

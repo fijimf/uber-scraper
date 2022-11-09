@@ -44,14 +44,14 @@ public class EspnSeasonScrapeRepoTest {
 
     @Test
     public void saveOne() {
-        EspnSeasonScrape s = essRepo.save(new EspnSeasonScrape(0L, 2022, LocalDateTime.now(), null, LocalDateTime.now().plusSeconds(6))).block();
+        EspnSeasonScrape s = essRepo.save(new EspnSeasonScrape(0L, 2022,null, null, LocalDateTime.now(), null, "RUNNING")).block();
         assertThat(s).isNotNull();
         assertThat(s.getId()).isGreaterThan(0L);
     }
 
     @Test
     public void saveStream() {
-        Flux<EspnSeasonScrape> flux = Flux.range(2000, 20).map(y -> new EspnSeasonScrape(0L, y, LocalDateTime.now(), null, LocalDateTime.now().plusSeconds(3)));
+        Flux<EspnSeasonScrape> flux = Flux.range(2000, 20).map(y -> new EspnSeasonScrape(0L, y, null, null, LocalDateTime.now(),null, "RUNNING"));
         EspnSeasonScrape s = essRepo.saveAll(flux).blockLast();
         assertThat(s).isNotNull();
         assertThat(s.getId()).isGreaterThan(0L);

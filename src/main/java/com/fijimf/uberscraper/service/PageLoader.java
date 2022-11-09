@@ -8,8 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
+import org.springframework.web.client.RestTemplate;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -20,6 +22,8 @@ public class PageLoader {
     public static final Logger logger = LoggerFactory.getLogger(PageLoader.class);
     @Autowired
     private ChromeDriver chromeDriver;
+
+    private RestTemplate restTemplate = new RestTemplate();
 
     public Mono<Document> loadPageWithSelenium(String url) {
         String urlKey = DigestUtils.md5Hex(url);
@@ -61,5 +65,9 @@ public class PageLoader {
             logger.error("Exception retrieving url {}", url);
             return Mono.empty();
         }
+    }
+
+    public <T> ResponseEntity<T> loadX(String url, Class<T> type){
+       return restTemplate.getForEntity(url, type);
     }
 }
