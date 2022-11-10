@@ -154,5 +154,10 @@
             </plugin>
         </plugins>
     </build>
-
+    <scm>
+        <url>https://github.com/fijimf/uber-scraper</url>
+        <connection>scm:git:ssh://git@github.com/fijimf/uber-scraper.git</connection>
+        <developerConnection>scm:git:git@github.com:fijimf/uber-scraper.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 </project>
