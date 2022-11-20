@@ -1,4 +1,4 @@
-FROM openjdk:14-jdk-alpine as build
+FROM amazoncorretto:15-alpine-jdk as build
 WORKDIR /workspace/app
 
 COPY mvnw .
