@@ -11,7 +11,7 @@ RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 RUN pwd
 RUN ls target
 
-FROM openjdk:14-jdk-alpine
+FROM amazoncorretto:17-alpine-jdk
 VOLUME /tmp
 COPY --from=build /workspace/app/target/dependency/BOOT-INF/lib /app/lib
 COPY --from=build /workspace/app/target/dependency/META-INF /app/META-INF
