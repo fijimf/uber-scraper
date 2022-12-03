@@ -5,6 +5,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fijimf.uberscraper.model.espn.Scoreboard;
 import com.fijimf.uberscraper.model.espn.ScoreboardGame;
 import com.fijimf.uberscraper.model.espn.ScoreboardOdds;
+import com.fijimf.uberscraper.model.espn.Teams;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -38,6 +39,17 @@ public class JsonScraperTest {
             Scoreboard scoreboard = objectMapper.readValue(inputStream, Scoreboard.class);
             assertThat(scoreboard.getSports()).isNotNull();
             System.err.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(scoreboard));
+        }
+    }
+    @Test
+    void extractTeamsJson() throws IOException {
+        try (InputStream inputStream = ClassLoader.getSystemResourceAsStream("pages/teams.json")) {
+            ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
+            Teams teams = objectMapper.readValue(inputStream, Teams.class);
+            assertThat(teams.getSports()).hasSize(1);
+            assertThat(teams.getSports()[0].getLeagues()).hasSize(1);
+            assertThat(teams.values()).hasSize(360);
+            System.err.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(teams));
         }
     }
 }

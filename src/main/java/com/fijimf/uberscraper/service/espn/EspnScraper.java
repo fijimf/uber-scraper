@@ -4,16 +4,18 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fijimf.uberscraper.db.espn.model.EspnScoreboardScrape;
 import com.fijimf.uberscraper.db.espn.model.EspnSeasonScrape;
+import com.fijimf.uberscraper.db.espn.model.EspnTeamsScrape;
 import com.fijimf.uberscraper.db.espn.repo.EspnScoreboardScrapeRepo;
 import com.fijimf.uberscraper.db.espn.repo.EspnSeasonScrapeRepo;
+import com.fijimf.uberscraper.db.espn.repo.EspnTeamsScrapeRepo;
 import com.fijimf.uberscraper.model.espn.Scoreboard;
+import com.fijimf.uberscraper.model.espn.Teams;
 import com.fijimf.uberscraper.service.PageLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpStatusCodeException;
-import org.springframework.web.client.RestClientException;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -35,6 +37,7 @@ public class EspnScraper {
     private final PageLoader pageLoader;
     private final EspnSeasonScrapeRepo essRepo;
     private final EspnScoreboardScrapeRepo escRepo;
+    private final EspnTeamsScrapeRepo estRepo;
     private final ObjectMapper mapper;
 
     private final ConcurrentMap<Long, Disposable> runningLoaders = new ConcurrentHashMap<>();
@@ -44,10 +47,11 @@ public class EspnScraper {
             "groups=50&" +
             "limit=300";
 
-    public EspnScraper(PageLoader pageLoader, EspnSeasonScrapeRepo essRepo, EspnScoreboardScrapeRepo escRepo, ObjectMapper mapper) {
+    public EspnScraper(PageLoader pageLoader, EspnSeasonScrapeRepo essRepo, EspnScoreboardScrapeRepo escRepo, EspnTeamsScrapeRepo estRepo, ObjectMapper mapper) {
         this.pageLoader = pageLoader;
         this.essRepo = essRepo;
         this.escRepo = escRepo;
+        this.estRepo = estRepo;
         this.mapper = mapper;
     }
 
@@ -167,6 +171,35 @@ public class EspnScraper {
                 .collectList()
                 .map(HashSet::new);
     }
+
+    public Flux<EspnSeasonScrape> showLoaders(){
+        return Flux.fromIterable(runningLoaders.keySet()).flatMap(essRepo::findById);
+    }
+
+    public Mono<Long> loadTeams() {
+        LocalDateTime start = LocalDateTime.now();
+        String url = "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?limit=500";
+        logger.info("Loading teams "+url);
+
+        try {
+            ResponseEntity<Teams> entity = pageLoader.loadX(url, Teams.class);
+            logger.info(entity.getStatusCode().toString() + " | " + entity.hasBody());
+            long elapsed = ChronoUnit.MILLIS.between(start, LocalDateTime.now());
+            Teams body = entity.getBody();
+            if (entity.hasBody() && body != null) {
+                int statusCode = entity.getStatusCodeValue();
+                String value = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(body);
+                EspnTeamsScrape ts = new EspnTeamsScrape(0L,url, start,elapsed, statusCode, value,"SUCCESS");
+                return estRepo.save(ts).map(EspnTeamsScrape::getId);
+            }
+        } catch (Exception e){
+            long elapsed = ChronoUnit.MILLIS.between(start, LocalDateTime.now());
+            logger.error("Exception retrieving teams", e);
+        }
+        return Mono.just(0L);
+
+    }
+
 
 }
 

@@ -6,3 +6,8 @@ ODDS
 https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=mens-college-basketball&dates=20210403
 NEUTRAL
 https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20210403&group=50
+
+https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?limit=500
+
+https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2023/types/2/groups/50/children?limit=100
+

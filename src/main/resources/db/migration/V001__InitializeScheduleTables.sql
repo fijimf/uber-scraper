@@ -22,3 +22,15 @@ CREATE TABLE espn_scoreboard_scrape
     response              TEXT         NULL,
     number_of_games       INT          NULL
 );
+
+CREATE TABLE espn_teams_scrape
+(
+    id                    BIGSERIAL PRIMARY KEY,
+    url                   VARCHAR(192) NOT NULL,
+    retrieved_at          TIMESTAMP    NULL,
+    response_time_ms      BIGINT       NULL,
+    response_code         INT          NULL,
+    response              TEXT         NULL,
+    status                VARCHaR(32) NOT NULL
+);
+
