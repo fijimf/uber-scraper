@@ -1,0 +1,113 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security5">
+<head >
+    <meta charset="UTF-8">
+    <title>Scrape Jobs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&display=swap"
+          rel="stylesheet">
+    <style>
+        .header {
+            background: url("https://www.toptal.com/designers/subtlepatterns/patterns/brickwall.png");
+            color: #0f0f0f;
+        }
+        .footer {
+            background: url("https://www.toptal.com/designers/subtlepatterns/patterns/brickwall.png");
+            color: #0f0f0f;
+        }
+    </style>
+</head>
+
+<body>
+<div class="d-flex flex-column">
+    <div  class="header d-flex flex-row align-items-center justify-content-between p-1"
+         style="border-bottom:black double;border-top:black double; ">
+        <img class="px-4"
+             src="https://raw.githubusercontent.com/fijimf/deepfij-2012/master/deepfij-web/src/main/webapp/images/deepfij.png">
+        <h1 class="p-1" style="font-family: 'Lato', sans-serif; font-size: 3em; font-weight:900;">deepFij|MMXXIII</h1>
+        <div sec:authorize="!isAuthenticated()">
+            <a href="#" class="px-4 m-1 btn btn-sm btn-primary">Sign in</a>
+        </div>
+        <div sec:authorize="isAuthenticated()">
+            <div class="d-flex flex-column">
+                <div class="m-1 pt-2">Jim Frohnhofer</div>
+                <a href="#" class="px-4 m-1 btn btn-sm btn-primary">Sign Out</a>
+            </div>
+        </div>
+
+    </div>
+    <div   style="border-bottom:black double;">
+        <div class="text-center" style="font-family: Serif; font-style: italic;">All my failings exposed, gets a taste
+            in my mouth as desperation takes hold
+        </div>
+    </div>
+    <div class="d-flex flex-row">
+        <div  class="d-flex flex-column justify-content-start align-content-stretch" style="background-color: #fdfdfd;">
+            <div class="py-1 px-4 mt-1 mx-2 ">
+                <div class="input-group input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="fas fa-search input-group-text"></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search...">
+                </div>
+            </div>
+            <div class="py-1 px-4 mt-1 mx-2 ">
+                <a class="btn btn-sm btn-dark btn-block px-5" href="#"><span class="fas fa-home"></span> Home</a>
+            </div>
+            <div class="py-1 px-4 mt-1 mx-2 ">
+                <a class="btn btn-sm btn-dark btn-block px-5" href="#"><span class="fas fa-basketball-ball"></span> Teams</a>
+            </div>
+            <div class="py-1 px-4 mt-1 mx-2 ">
+                <a class="btn btn-sm btn-dark btn-block px-5" href="#"><span class="fas fa-wave-square"></span> Stats</a>
+            </div>
+            <div sec:authorize="hasAuthority('ADMIN')" class="py-1 px-4 mt-1 mx-2 ">
+                <a class="btn btn-sm btn-dark btn-block px-5" href="#"><span class="fas fa-tools"></span> Admin</a>
+            </div>
+            <div class="py-1 px-4 mt-1 mx-2 ">
+                <a class="btn btn-sm btn-dark btn-block px-5" href="#"><span class="fas fa-angle-double-right"></span> About</a>
+            </div>
+        </div>
+        <div id="mainContent" class="m-1" style="max-width: 75%;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet luctus ultrices. Morbi sed ex
+                est. Praesent egestas nulla dui, pulvinar hendrerit est faucibus sed. Nunc ac interdum nunc, et bibendum
+                erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed lacus a odio hendrerit vehicula.
+                Morbi ultricies metus diam, ac scelerisque libero placerat nec.</p>
+
+            <p>Proin id nisl fringilla, lacinia nunc quis, posuere tortor. Suspendisse hendrerit felis quis velit
+                malesuada, eu lacinia lorem accumsan. Nulla facilisi. Proin non faucibus elit, non efficitur mi. Mauris
+                scelerisque ac lorem vel facilisis. Pellentesque habitant morbi tristique senectus et netus et malesuada
+                fames ac turpis egestas. Fusce id magna eget lacus accumsan feugiat in et lacus. Curabitur ac rhoncus
+                purus. Donec nec ligula vitae est volutpat rhoncus. Sed varius, mauris in vehicula consectetur, eros
+                purus ornare tellus, non tincidunt ex sapien vitae tellus. Pellentesque faucibus placerat metus non
+                accumsan.</p>
+
+            <p>Donec eget dui mi. Maecenas semper dapibus urna, eu maximus lorem luctus eget. Integer non lacus id
+                tortor sodales bibendum. Aenean in tellus et mi luctus placerat. Nam elementum turpis lectus, eu tempus
+                ligula tempus vel. Nunc malesuada sapien eget volutpat dictum. Phasellus a lorem id nisi aliquam
+                hendrerit.</p>
+
+            <p>Phasellus a sapien quis lacus hendrerit condimentum eget sed nisi. Mauris in mattis felis. Proin diam
+                tellus, blandit nec erat eu, congue condimentum purus. Ut in faucibus massa. Aliquam luctus posuere
+                nisl. Nullam id urna malesuada, faucibus mi et, elementum ex. Nullam ac posuere ipsum. Donec egestas
+                elit a dignissim auctor. Mauris leo velit, efficitur non diam non, iaculis dignissim tellus. Mauris at
+                metus mi. Suspendisse venenatis tempus tellus non condimentum. Aliquam rutrum pulvinar rhoncus. Fusce
+                tincidunt non neque et pretium. Integer in aliquet nibh.</p>
+
+            <p>Nam sodales dapibus enim pretium ultricies. Donec viverra risus consectetur eleifend elementum. In quis
+                neque eu diam ullamcorper elementum. Aliquam gravida imperdiet facilisis. Fusce luctus ipsum lacus, sed
+                k  feugiat sapien eleifend bibendum. Nulla facilisi. Fusce sit amet molestie felis, in auctor velit.
+                Pellentesque luctus consectetur lacus ut lacinia.</p>
+        </div>
+    </div>
+    <div class="footer d-flex flex-column" style="border-top: black double">
+        <div class="px-4 py-1">&copy; 2020 Deep Fij Enterprises</div>
+        <div class="px-4 py-1">Contact us at <a href="mailto:deepfij@gmail.com">deepfij@gmail.com</a></div>
+    </div>
+</div>
+</body>
+</html>
